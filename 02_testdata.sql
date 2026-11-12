@@ -1,0 +1,155 @@
+USE holiday_maker;
+
+INSERT INTO customer (first_name, last_name, email, phone)
+VALUES ('David', 'Johansson', 'david.johansson@example.com', '070-1353945'),
+       ('Liks', 'Patriksson', 'liks.patriksson@example.com', '070-4234315'),
+       ('Erik', 'Andersson', 'erik.andersson@example.com', '073-5821946'),
+       ('Emma', 'Johansson', 'emma.johansson@example.com', '070-9362814'),
+       ('Oliver', 'Karlsson', 'oliver.karlsson@example.com', '076-4185732'),
+       ('Alice', 'Nilsson', 'alice.nilsson@example.com', '072-6951348'),
+       ('William', 'Eriksson', 'william.eriksson@example.com', '073-2478195'),
+       ('Maja', 'Larsson', 'maja.larsson@example.com', '070-8539261'),
+       ('Lucas', 'Olsson', 'lucas.olsson@example.com', '076-3927158'),
+       ('Ella', 'Persson', 'ella.persson@example.com', '072-5814639'),
+       ('Hugo', 'Svensson', 'hugo.svensson@example.com', '073-9162847'),
+       ('Astrid', 'Gustafsson', 'astrid.gustafsson@example.com', '070-4286935'),
+       ('Noah', 'Pettersson', 'noah.pettersson@example.com', '076-7351824'),
+       ('Alma', 'Jonsson', 'alma.jonsson@example.com', '072-3649581'),
+       ('Liam', 'Jansson', 'liam.jansson@example.com', '073-8492165'),
+       ('Elsa', 'Hansson', 'elsa.hansson@example.com', '070-5173842'),
+       ('Elias', 'Bengtsson', 'elias.bengtsson@example.com', '076-2836491'),
+       ('Freja', 'Lindberg', 'freja.lindberg@example.com', '072-9481753'),
+       ('Mohammed', 'Hassan', 'mohammed.hassan@example.com', '073-6254918'),
+       ('Sara', 'Ahmed', 'sara.ahmed@example.com', '070-3918574'),
+       ('Amir', 'Ali', 'amir.ali@example.com', '076-8142639'),
+       ('Fatima', 'Hussein', 'fatima.hussein@example.com', '072-5739186'),
+       ('Adnan', 'Hadžić', 'adnan.hadzic@example.com', '073-4628195'),
+       ('Lejla', 'Begović', 'lejla.begovic@example.com', '070-9583721'),
+       ('Emir', 'Kovačević', 'emir.kovacevic@example.com', '076-3257941'),
+       ('Amina', 'Delić', 'amina.delic@example.com', '072-8164953'),
+       ('Haris', 'Mehić', 'haris.mehic@example.com', '073-5941826'),
+       ('Selma', 'Hodžić', 'selma.hodzic@example.com', '070-2639481'),
+       ('Marko', 'Petrović', 'marko.petrovic@example.com', '076-9513824'),
+       ('Ana', 'Jovanović', 'ana.jovanovic@example.com', '072-4386195'),
+       ('Ivan', 'Horvat', 'ivan.horvat@example.com', '073-7825164'),
+       ('Mia', 'Novak', 'mia.novak@example.com', '070-6194382'),
+       ('David', 'Müller', 'david.muller@example.com', '076-4829351'),
+       ('Sofia', 'Schmidt', 'sofia.schmidt@example.com', '072-9351748'),
+       ('Daniel', 'Wilson', 'daniel.wilson@example.com', '073-5186294'),
+       ('Olivia', 'Brown', 'olivia.brown@example.com', '070-8423916'),
+       ('James', 'Taylor', 'james.taylor@example.com', '076-2948153'),
+       ('Emily', 'Davis', 'emily.davis@example.com', '072-6739281'),
+       ('Alexander', 'Martin', 'alexander.martin@example.com', '073-4158926'),
+       ('Isabella', 'Garcia', 'isabella.garcia@example.com', '070-9284631');
+
+INSERT INTO accommodation
+(name,
+ city,
+ pool,
+ restaurant,
+ distance_beach,
+ distance_city,
+ rating)
+VALUES ('Hotel Sun', 'Dubrovnik', FALSE, TRUE, 150, 800, 4),
+       ('Hotel Hills', 'Neum', TRUE, TRUE, 260, 0, 5),
+       ('Hotel Ocean', 'Split', TRUE, FALSE, 30, 300, 3),
+       ('Hotel Ray', 'Dubrovnik', FALSE, FALSE, 0, 1000, 4),
+       ('Hotel Waves', 'Makarska', FALSE, TRUE, 90, 20, 5),
+       ('Hotel Adriatic', 'Dubrovnik', TRUE, TRUE, 50, 1200, 5),
+       ('Hotel Paradise', 'Split', TRUE, TRUE, 100, 500, 4),
+       ('Hotel Blue Bay', 'Makarska', TRUE, FALSE, 20, 800, 4);
+
+INSERT INTO room (accommodation_id, room_number, max_people, price_per_night)
+VALUES
+       # Hotel Sun (ID 1) Dubrovnik
+       (1, '101', 2, 905.00),
+       (1, '102', 4, 1600.00),
+       (1, '201', 2, 905.00),
+       (1, '202', 4, 1600.00),
+
+       # Hotel Hills (ID 2) Neum
+       (2, '101', 2, 1200.00),
+       (2, '102', 4, 2100.00),
+       (2, '103', 3, 1650.00),
+       (2, '201', 2, 1350.00),
+       (2, '202', 4, 2300.00),
+       (2, '203', 1, 850.00),
+
+       # Hotel Ocean (ID 3) Split
+       (3, '101', 2, 750.00),
+       (3, '102', 3, 1050.00),
+       (3, '103', 4, 1400.00),
+       (3, '201', 2, 800.00),
+       (3, '202', 1, 550.00),
+       (3, '203', 4, 1500.00),
+
+       # Hotel Ray (ID 4) Dubrovnik
+       (4, '101', 2, 950.00),
+       (4, '102', 4, 1750.00),
+       (4, '103', 3, 1350.00),
+       (4, '201', 2, 1050.00),
+       (4, '202', 4, 1850.00),
+       (4, '203', 1, 700.00),
+
+       # Hotel Waves (ID 5) Makarska
+       (5, '101', 2, 1400.00),
+       (5, '102', 4, 2500.00),
+       (5, '103', 3, 1900.00),
+       (5, '201', 2, 1550.00),
+       (5, '202', 4, 2700.00),
+       (5, '203', 1, 1000.00),
+
+       # Hotel Adriatic (ID 6) Dubrovnik
+       (6, '101', 2, 1500.00),
+       (6, '102', 4, 2800.00),
+       (6, '103', 3, 2100.00),
+       (6, '201', 2, 1650.00),
+       (6, '202', 4, 3000.00),
+       (6, '203', 1, 1100.00),
+
+       # Hotel Paradise (ID 7) Split
+       (7, '101', 2, 1100.00),
+       (7, '102', 4, 1950.00),
+       (7, '103', 3, 1500.00),
+       (7, '201', 2, 1200.00),
+       (7, '202', 4, 2150.00),
+       (7, '203', 1, 800.00),
+
+       # Hotel Blue Bay (ID 8) Makarska
+       (8, '101', 2, 1000.00),
+       (8, '102', 4, 1800.00),
+       (8, '103', 3, 1400.00),
+       (8, '201', 2, 1150.00),
+       (8, '202', 4, 2000.00),
+       (8, '203', 1, 750.00);
+
+INSERT INTO booking (customer_id, room_id, check_in, check_out, number_of_people)
+VALUES (1, 1, '2026-12-10', '2026-12-13', 2),
+       (2, 1, '2026-12-13', '2026-12-16', 1),
+       (5, 2, '2026-12-13', '2026-12-16', 1),
+       (3, 3, '2026-12-01', '2026-12-05', 2),
+       (4, 4, '2026-12-06', '2026-12-10', 4),
+       (6, 5, '2026-12-02', '2026-12-07', 2),
+       (7, 6, '2026-12-08', '2026-12-12', 3),
+       (8, 7, '2026-12-10', '2026-12-15', 2),
+       (9, 8, '2026-12-14', '2026-12-18', 2),
+       (10, 9, '2026-12-18', '2026-12-22', 4),
+       (11, 10, '2026-12-20', '2026-12-24', 1),
+       (12, 11, '2026-12-01', '2026-12-04', 2),
+       (13, 12, '2026-12-05', '2026-12-09', 3),
+       (14, 13, '2026-12-09', '2026-12-13', 4),
+       (15, 14, '2026-12-12', '2026-12-16', 2),
+       (16, 15, '2026-12-16', '2026-12-20', 1),
+       (17, 16, '2026-12-20', '2026-12-25', 4),
+       (18, 17, '2026-12-02', '2026-12-06', 2),
+       (19, 18, '2026-12-07', '2026-12-11', 4),
+       (20, 19, '2026-12-11', '2026-12-15', 3),
+       (21, 20, '2026-12-15', '2026-12-19', 2),
+       (22, 21, '2026-12-19', '2026-12-23', 4),
+       (23, 22, '2026-12-23', '2026-12-27', 1),
+       (24, 1, '2026-12-17', '2026-12-21', 2),
+       (25, 1, '2026-12-22', '2026-12-26', 1),
+       (26, 24, '2026-12-24', '2026-12-27', 4),
+       (27, 27, '2026-12-24', '2026-12-27', 3),
+       (28, 42, '2026-12-24', '2026-12-27', 4),
+       (29, 45, '2026-12-24', '2026-12-27', 2);
